@@ -1,5 +1,8 @@
+import Hero from "./components/hero/hero";
+import "./assets/styles/core.css";
+
 const App = () => {
-  return <h1>Hello World!</h1>;
+  return <Hero />;
 };
 
 export default App;
