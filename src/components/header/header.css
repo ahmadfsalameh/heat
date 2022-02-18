@@ -1,0 +1,48 @@
+header {
+  width: 100%;
+  max-width: 1200px;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+div.logo p {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  letter-spacing: 1px;
+}
+div.logo p span {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+  color: rgb(4 9 30);
+  font-size: 1.4rem;
+}
+nav {
+  margin-left: auto;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+nav ul li a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #e1e1e1;
+}
+nav ul li a:hover {
+  color: #fff;
+}
