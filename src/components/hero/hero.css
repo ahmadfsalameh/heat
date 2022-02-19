@@ -87,3 +87,40 @@ div.units button[data-active="1"] {
 div.units button:hover {
   background-color: #fff;
 }
+div.weather-status button.scroll-down {
+  margin-top: auto;
+  margin-bottom: 3rem;
+  border: 0;
+  background-color: transparent;
+  color: #e1e1e1;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  position: relative;
+  animation: move 2s infinite linear;
+}
+@keyframes move {
+  0% {
+    top: -0.5rem;
+  }
+  25% {
+    top: 0rem;
+  }
+  50% {
+    top: 0.5rem;
+  }
+  75% {
+    top: 0rem;
+  }
+  100% {
+    top: -0.5rem;
+  }
+}
+div.weather-status button.scroll-down:hover {
+  color: #fff;
+  animation-play-state: paused;
+}

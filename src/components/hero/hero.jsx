@@ -45,6 +45,9 @@ const Hero = () => {
             </button>
           </div>
         </p>
+        <button className="scroll-down">
+          Scroll down <BsArrowDownCircle />
+        </button>
       </div>
     </section>
   );
