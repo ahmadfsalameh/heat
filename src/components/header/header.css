@@ -8,6 +8,7 @@ header {
   display: flex;
   align-items: center;
   padding: 1rem;
+  z-index: 2;
 }
 div.logo p {
   font-size: 1.1rem;
@@ -59,14 +60,14 @@ div.form-background {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255 255 255 / 75%);
+  background-color: rgba(255 255 255 / 85%);
   transition: all 200ms ease-in-out;
   z-index: -1;
   border: 1px solid rgba(255 255 255 / 50%);
 }
 form input {
   width: 240px;
-  height: 2.2rem;
+  height: 2.3rem;
   border-radius: var(--border-radius);
   border: 0;
   outline: none;
