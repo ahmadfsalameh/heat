@@ -62,8 +62,8 @@ div.weather-status p span:nth-child(2)::before {
 }
 div.units {
   position: absolute;
-  right: -4rem;
-  top: -2rem;
+  right: -3rem;
+  top: -1.5rem;
   display: flex;
   gap: 0.3rem;
 }
@@ -74,8 +74,8 @@ div.units button {
   outline: none;
   color: #000;
   background-color: rgba(255 255 255 / 50%);
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: var(--border-radius);
   font-weight: 500;
   transition: all 200ms ease-in-out;
