@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { TiWeatherWindy } from "react-icons/ti";
+import { GiFireflake } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
 import Flags from "country-flag-icons/react/3x2";
 
@@ -21,9 +21,9 @@ const Header = () => {
       <div className="logo">
         <p>
           <span>
-            <TiWeatherWindy />
+            <GiFireflake />
           </span>
-          Weather
+          HEAT
         </p>
       </div>
       <nav>
