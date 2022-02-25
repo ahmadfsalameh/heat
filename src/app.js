@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     const startingTime = new Date().getTime() / 1000;
     fetch(
-      "https://api.weatherapi.com/v1/forecast.json?key=41685b31f7104bf597f114815222002&q=Amman&days=10&aqi=no&alerts=no"
+      `https://api.weatherapi.com/v1/forecast.json?key=41685b31f7104bf597f114815222002&q=${country.address}&days=10&aqi=no&alerts=no`
     )
       .then((res) => res.json())
       .then((d) => {
@@ -27,7 +27,7 @@ const App = () => {
           }, 2000);
         else setWeather(d);
       });
-  }, []);
+  }, [country]);
 
   return (
     <WeatherContext.Provider value={weather}>
