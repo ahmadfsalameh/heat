@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../header/header";
 import { RiMouseLine } from "react-icons/ri";
 
-import heroImage from "../../assets/images/hero1.jpg";
+import heroImage from "../../assets/images/hero.jpg";
 import weatherJSON from "../../constants/weather";
 import "./hero.css";
 
