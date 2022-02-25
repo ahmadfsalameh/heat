@@ -25,43 +25,48 @@ const Hero = () => {
     return <IconName className="weather-icon" />;
   };
 
-  if (!Object.keys(weather).length) return null;
-
   const { current } = weather;
   return (
     <section className="hero">
       <img src={heroImage} className="cover" />
-      <div className="weather-status">
-        {getIcon(current.condition.code, current.isDay)}
-        <p>
-          <span>{weather.current.condition.text}</span>
-          <span>
-            {unit === "celsius"
-              ? weather.current.temp_c
-              : Math.round(weather.current.temp_f)}
-            º
-          </span>
-          <div className="units">
-            <button
-              data-active={unit == "celsius" && "1"}
-              data-unit="celsius"
-              onClick={changeUnit}
-            >
-              C
-            </button>
-            <button
-              data-active={unit == "fahrenheit" && "1"}
-              data-unit="fahrenheit"
-              onClick={changeUnit}
-            >
-              F
+      {Object.keys(weather).length ? (
+        <>
+          <div className="hero-loader hero-loader-hide"></div>
+          <div className="weather-status">
+            {getIcon(current.condition.code, current.isDay)}
+            <p>
+              <span>{weather.current.condition.text}</span>
+              <span>
+                {unit === "celsius"
+                  ? weather.current.temp_c
+                  : Math.round(weather.current.temp_f)}
+                º
+              </span>
+              <div className="units">
+                <button
+                  data-active={unit == "celsius" && "1"}
+                  data-unit="celsius"
+                  onClick={changeUnit}
+                >
+                  C
+                </button>
+                <button
+                  data-active={unit == "fahrenheit" && "1"}
+                  data-unit="fahrenheit"
+                  onClick={changeUnit}
+                >
+                  F
+                </button>
+              </div>
+            </p>
+            <button className="scroll-down">
+              Scroll down <RiMouseLine />
             </button>
           </div>
-        </p>
-        <button className="scroll-down">
-          Scroll down <RiMouseLine />
-        </button>
-      </div>
+        </>
+      ) : (
+        <div className="hero-loader"></div>
+      )}
     </section>
   );
 };
