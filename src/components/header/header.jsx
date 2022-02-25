@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useContext } from "react";
 import { GiFireflake } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
 import Flags from "country-flag-icons/react/3x2";
+import { CountryContext } from "../../contexts/countryContext";
 
 import "./header.css";
 
 const Header = () => {
-  const [country, setCountry] = useState("JO");
-  const [address, setAddress] = useState("Amman, Jordan");
+  const { country, address } = useContext(CountryContext);
 
   const location = useRef();
 

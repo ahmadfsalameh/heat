@@ -2,11 +2,16 @@ import { useState, useEffect } from "react";
 import Hero from "./components/hero/hero";
 import Header from "./components/header/header";
 import { WeatherContext } from "./contexts/weatherContext";
+import { CountryContext } from "./contexts/countryContext";
 
 import "./assets/styles/core.css";
 
 const App = () => {
   const [weather, setWeather] = useState({});
+  const [country, setCountry] = useState({
+    country: "JO",
+    address: "Amman, Jordan",
+  });
 
   useEffect(() => {
     const startingTime = new Date().getTime() / 1000;
@@ -27,7 +32,9 @@ const App = () => {
   return (
     <WeatherContext.Provider value={weather}>
       <Hero />
-      <Header />
+      <CountryContext.Provider value={country}>
+        <Header />
+      </CountryContext.Provider>
     </WeatherContext.Provider>
   );
 };
