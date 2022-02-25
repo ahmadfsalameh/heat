@@ -42,7 +42,7 @@ const Header = () => {
       c = "United Kingdom of Great Britain and Northern Ireland";
     let code = countryList.getCode(c);
 
-    if (!code) code = "JO";
+    if (!code) code = "";
     if (code === "UK") code = "GB";
 
     setCountry({
