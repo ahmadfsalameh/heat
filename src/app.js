@@ -9,11 +9,26 @@ import "./assets/styles/core.css";
 const App = () => {
   const [weather, setWeather] = useState({});
   const [country, setCountry] = useState({
-    country: "JO",
-    address: "Amman, Jordan",
+    country: "",
+    address: "",
   });
+  const [agent, setAgent] = useState({});
 
   useEffect(() => {
+    fetch(
+      `https://api.ipgeolocation.io/ipgeo?apiKey=55e0b8f0cb3246a88c99d165e8b1be77`
+    )
+      .then((res) => res.json())
+      .then((d) => {
+        setCountry({
+          country: d.country_code2,
+          address: `${d.city}, ${d.country_name}`,
+        });
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!country.address) return;
     setWeather({});
     const startingTime = new Date().getTime() / 1000;
     fetch(
