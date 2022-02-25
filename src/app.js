@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Hero from "./components/hero/hero";
+import Header from "./components/header/header";
 import { WeatherContext } from "./contexts/weatherContext";
 
 import "./assets/styles/core.css";
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <WeatherContext.Provider value={weather}>
       <Hero />
+      <Header />
     </WeatherContext.Provider>
   );
 };

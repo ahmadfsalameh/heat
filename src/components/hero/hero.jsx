@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { WeatherContext } from "../../contexts/weatherContext";
-import Header from "../header/header";
 import { RiMouseLine } from "react-icons/ri";
 
 import heroImage from "../../assets/images/hero.jpg";
@@ -32,7 +31,6 @@ const Hero = () => {
   return (
     <section className="hero">
       <img src={heroImage} className="cover" />
-      <Header />
       <div className="weather-status">
         {getIcon(current.condition.code, current.isDay)}
         <p>
