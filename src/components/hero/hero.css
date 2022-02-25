@@ -84,20 +84,20 @@ div.weather-status svg.weather-icon {
   filter: drop-shadow(3px 3px 0 rgba(0 0 0/10%));
   margin-top: auto;
 }
-div.weather-status p {
+div.weather-status div.weather-info {
   display: flex;
   gap: 1.5rem;
   filter: drop-shadow(3px 3px 0 rgba(0 0 0/10%));
   position: relative;
 }
-div.weather-status p span {
+div.weather-status div.weather-info span {
   font-size: 2.2rem;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-div.weather-status p span:nth-child(2)::before {
+div.weather-status div.weather-info span:nth-child(2)::before {
   content: "|";
   margin-right: 1.5rem;
 }
