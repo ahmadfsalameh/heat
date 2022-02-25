@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import Hero from "./components/hero/hero";
-import Header from "./components/header/header";
 import { WeatherContext } from "./contexts/weatherContext";
 import { CountryContext } from "./contexts/countryContext";
+import Hero from "./components/hero/hero";
+import Header from "./components/header/header";
+import DownloadApp from "./components/downloadApp/downloadApp";
 
 import "./assets/styles/core.css";
 
@@ -46,14 +47,17 @@ const App = () => {
   }, [country]);
 
   return (
-    <WeatherContext.Provider value={weather}>
-      <Hero />
-      <CountryContext.Provider
-        value={[country.country, country.address, setCountry]}
-      >
-        <Header />
-      </CountryContext.Provider>
-    </WeatherContext.Provider>
+    <>
+      <WeatherContext.Provider value={weather}>
+        <Hero />
+        <CountryContext.Provider
+          value={[country.country, country.address, setCountry]}
+        >
+          <Header />
+        </CountryContext.Provider>
+      </WeatherContext.Provider>
+      <DownloadApp />
+    </>
   );
 };
 
