@@ -16,3 +16,13 @@ body {
   overflow-x: hidden;
   padding: 0;
 }
+article {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+article section {
+  scroll-snap-align: start;
+}

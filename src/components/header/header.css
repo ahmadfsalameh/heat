@@ -60,9 +60,9 @@ div.form-background {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 200ms ease-in-out;
+  background-color: rgba(255 255 255 / 85%);
+  transition: all 100ms ease-in-out;
   z-index: -1;
-  background-color: #fff;
 }
 form input {
   width: 240px;
@@ -78,6 +78,9 @@ form input {
 }
 form input:focus {
   z-index: 1;
+}
+form input:focus ~ div.form-background {
+  background-color: rgba(255 255 255 / 100%);
 }
 span.flag {
   width: 2rem;
