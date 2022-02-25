@@ -5,6 +5,7 @@ import Flags from "country-flag-icons/react/3x2";
 import { CountryContext } from "../../contexts/countryContext";
 import _ from "lodash";
 import countryList from "country-list";
+import NoFlag from "./noFlag/noFlag";
 
 import "./header.css";
 
@@ -15,11 +16,14 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  let prevAddress = useRef(addressValue);
+  let prevAddress = useRef();
   const location = useRef();
   const results = useRef();
 
-  const Flag = Flags[country];
+  useEffect(() => {
+    prevAddress.current = address;
+    setAddressValue(address);
+  }, [address]);
 
   const focus = () => {
     location.current.focus();
@@ -90,6 +94,8 @@ const Header = () => {
       showResults();
     }
   };
+
+  const Flag = country.length ? Flags[country] : NoFlag;
 
   return (
     <header>

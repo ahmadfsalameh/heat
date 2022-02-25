@@ -102,6 +102,12 @@ span.flag {
   transform: translateY(-50%);
   left: 0.5rem;
 }
+span.no-flag {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #cacaca;
+}
 span.location {
   display: block;
   position: absolute;
