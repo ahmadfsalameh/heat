@@ -35,7 +35,7 @@ const Hero = () => {
       ></div>
       {isWeather && (
         <div className="weather-status">
-          {getIcon(current.condition.code, current.isDay)}
+          {getIcon(current.condition.code, current.is_day)}
           <p>
             <span>{weather.current.condition.text}</span>
             <span>
