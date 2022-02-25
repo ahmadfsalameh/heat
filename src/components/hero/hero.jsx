@@ -40,7 +40,7 @@ const Hero = () => {
             <span>{weather.current.condition.text}</span>
             <span>
               {unit === "celsius"
-                ? weather.current.temp_c
+                ? Math.round(weather.current.temp_c)
                 : Math.round(weather.current.temp_f)}
               º
             </span>
