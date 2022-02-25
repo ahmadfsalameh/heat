@@ -32,7 +32,9 @@ const App = () => {
   return (
     <WeatherContext.Provider value={weather}>
       <Hero />
-      <CountryContext.Provider value={country}>
+      <CountryContext.Provider
+        value={[country.country, country.address, setCountry]}
+      >
         <Header />
       </CountryContext.Provider>
     </WeatherContext.Provider>
