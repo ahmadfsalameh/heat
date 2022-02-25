@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import { WeatherContext } from "../../contexts/weatherContext";
 import Header from "../header/header";
 import { RiMouseLine } from "react-icons/ri";
 
@@ -7,16 +8,8 @@ import weatherJSON from "../../constants/weather";
 import "./hero.css";
 
 const Hero = () => {
-  const [weather, setWeather] = useState({});
+  const weather = useContext(WeatherContext);
   const [unit, setUnit] = useState("celsius");
-
-  useEffect(() => {
-    fetch(
-      "https://api.weatherapi.com/v1/forecast.json?key=41685b31f7104bf597f114815222002&q=Amman&days=10&aqi=no&alerts=no"
-    )
-      .then((res) => res.json())
-      .then((d) => setWeather(d));
-  }, []);
 
   const changeUnit = ({ target }) => {
     setUnit(target.dataset.unit);
