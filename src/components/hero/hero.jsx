@@ -36,7 +36,7 @@ const Hero = () => {
       {isWeather && (
         <div className="weather-status">
           {getIcon(current.condition.code, current.is_day)}
-          <p>
+          <div className="weather-info">
             <span>{weather.current.condition.text}</span>
             <span>
               {unit === "celsius"
@@ -60,7 +60,7 @@ const Hero = () => {
                 F
               </button>
             </div>
-          </p>
+          </div>
           <button className="scroll-down">
             Scroll down <RiMouseLine />
           </button>
