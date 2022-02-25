@@ -14,6 +14,7 @@ const App = () => {
   });
 
   useEffect(() => {
+    setWeather({});
     const startingTime = new Date().getTime() / 1000;
     fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=41685b31f7104bf597f114815222002&q=${country.address}&days=10&aqi=no&alerts=no`
