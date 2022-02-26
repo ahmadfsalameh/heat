@@ -11,7 +11,7 @@ import NoFlag from "./noFlag/noFlag";
 
 import "./header.css";
 
-const Header = () => {
+const Header = ({ article }) => {
   const [country, address, setCountry] = useContext(CountryContext);
   const [addressValue, setAddressValue] = useState(address);
 
@@ -22,11 +22,24 @@ const Header = () => {
   let prevAddress = useRef();
   const location = useRef();
   const results = useRef();
+  const header = useRef();
 
   useEffect(() => {
     prevAddress.current = address;
     setAddressValue(address);
+
+    article.current.addEventListener("scroll", handleScroll);
+
+    return () => {
+      article.current.removeEventListener("scroll", handleScroll);
+    };
   }, [address]);
+
+  const handleScroll = () => {
+    if (article.current.scrollTop <= 100)
+      header.current.classList.remove("header-scrolled");
+    else header.current.classList.add("header-scrolled");
+  };
 
   const focus = () => {
     location.current.focus();
@@ -101,7 +114,7 @@ const Header = () => {
   const Flag = country.length ? Flags[country] : NoFlag;
 
   return (
-    <header>
+    <header ref={header}>
       <div className="logo">
         <p>
           <span>
