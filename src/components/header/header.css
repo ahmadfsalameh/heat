@@ -1,14 +1,24 @@
 header {
   width: 100%;
-  max-width: 1200px;
   position: absolute;
   top: 0rem;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
   padding: 2rem;
   z-index: 2;
+  transition: all 300ms ease;
+}
+header div.header-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+header.header-scrolled {
+  padding: 1rem 2rem;
+  background-color: #040a1d;
 }
 div.logo p {
   font-size: 1.1rem;
