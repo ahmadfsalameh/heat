@@ -1,6 +1,8 @@
 import React, { useRef, useContext, useState, useEffect } from "react";
 import { GiFireflake } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
+import { TiTimes } from "react-icons/ti";
+import { HiMenuAlt3 } from "react-icons/hi";
 import Flags from "country-flag-icons/react/3x2";
 import { CountryContext } from "../../contexts/countryContext";
 import _ from "lodash";
@@ -15,6 +17,7 @@ const Header = () => {
 
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [nav, setNav] = useState(false);
 
   let prevAddress = useRef();
   const location = useRef();
@@ -104,16 +107,21 @@ const Header = () => {
           <span>
             <GiFireflake />
           </span>
-          HEAT
+          <span>HEAT</span>
         </p>
       </div>
-      <nav>
+      <nav data-nav={nav}>
         <ul>
           <li>
             <a href="#">Download App</a>
           </li>
           <li>
             <a href="#">About</a>
+          </li>
+          <li>
+            <button onClick={() => setNav(false)}>
+              <TiTimes />
+            </button>
           </li>
         </ul>
       </nav>
@@ -157,6 +165,9 @@ const Header = () => {
           )}
         </div>
       </div>
+      <button className="nav-toggler" onClick={() => setNav(true)}>
+        <HiMenuAlt3 />
+      </button>
     </header>
   );
 };
