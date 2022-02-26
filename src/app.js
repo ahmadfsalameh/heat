@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { WeatherContext } from "./contexts/weatherContext";
 import { CountryContext } from "./contexts/countryContext";
 import Hero from "./components/hero/hero";
@@ -15,6 +15,8 @@ const App = () => {
     address: "",
   });
   const [agent, setAgent] = useState({});
+
+  const article = useRef();
 
   useEffect(() => {
     fetch(
@@ -48,7 +50,7 @@ const App = () => {
   }, [country]);
 
   return (
-    <article>
+    <article ref={article}>
       <WeatherContext.Provider value={weather}>
         <Hero />
         <CountryContext.Provider
