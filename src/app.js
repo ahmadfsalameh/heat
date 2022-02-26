@@ -47,7 +47,7 @@ const App = () => {
   }, [country]);
 
   return (
-    <>
+    <article>
       <WeatherContext.Provider value={weather}>
         <Hero />
         <CountryContext.Provider
@@ -57,7 +57,7 @@ const App = () => {
         </CountryContext.Provider>
       </WeatherContext.Provider>
       <DownloadApp />
-    </>
+    </article>
   );
 };
 
