@@ -115,72 +115,74 @@ const Header = ({ article }) => {
 
   return (
     <header ref={header}>
-      <div className="logo">
-        <p>
-          <span>
-            <GiFireflake />
-          </span>
-          <span>HEAT</span>
-        </p>
-      </div>
-      <nav data-nav={nav}>
-        <ul>
-          <li>
-            <a href="#">Download App</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <button onClick={() => setNav(false)}>
-              <TiTimes />
-            </button>
-          </li>
-        </ul>
-      </nav>
-      <div className="search">
-        <form onSubmit={(e) => e.preventDefault()}>
-          <div className="form-overlay" onClick={focus}></div>
-          <span className="flag">
-            <Flag />
-          </span>
-          <input
-            type="text"
-            value={addressValue}
-            ref={location}
-            onChange={handleInputChange}
-            onBlur={blur}
-          />
-          <span className="location">
-            <GrLocation />
-          </span>
-          <div className="form-background"></div>
-        </form>
-        <div className="results" ref={results}>
-          <div className="loading"></div>
-          {searchResults.length && !loading ? (
-            <ul>
-              {searchResults.map((r) => {
-                const { id, name, country: c } = r;
-                return (
-                  <li key={id}>
-                    <button onClick={() => handleAddressChange([name, c])}>
-                      <span>
-                        {name}, {c}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            !loading && <p>No results...</p>
-          )}
+      <div className="header-container">
+        <div className="logo">
+          <p>
+            <span>
+              <GiFireflake />
+            </span>
+            <span>HEAT</span>
+          </p>
         </div>
+        <nav data-nav={nav}>
+          <ul>
+            <li>
+              <a href="#">Download App</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <button onClick={() => setNav(false)}>
+                <TiTimes />
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div className="search">
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="form-overlay" onClick={focus}></div>
+            <span className="flag">
+              <Flag />
+            </span>
+            <input
+              type="text"
+              value={addressValue}
+              ref={location}
+              onChange={handleInputChange}
+              onBlur={blur}
+            />
+            <span className="location">
+              <GrLocation />
+            </span>
+            <div className="form-background"></div>
+          </form>
+          <div className="results" ref={results}>
+            <div className="loading"></div>
+            {searchResults.length && !loading ? (
+              <ul>
+                {searchResults.map((r) => {
+                  const { id, name, country: c } = r;
+                  return (
+                    <li key={id}>
+                      <button onClick={() => handleAddressChange([name, c])}>
+                        <span>
+                          {name}, {c}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              !loading && <p>No results...</p>
+            )}
+          </div>
+        </div>
+        <button className="nav-toggler" onClick={() => setNav(true)}>
+          <HiMenuAlt3 />
+        </button>
       </div>
-      <button className="nav-toggler" onClick={() => setNav(true)}>
-        <HiMenuAlt3 />
-      </button>
     </header>
   );
 };
