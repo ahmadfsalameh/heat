@@ -56,7 +56,7 @@ const App = () => {
         <CountryContext.Provider
           value={[country.country, country.address, setCountry]}
         >
-          <Header />
+          <Header article={article} />
         </CountryContext.Provider>
       </WeatherContext.Provider>
       <DownloadApp />
