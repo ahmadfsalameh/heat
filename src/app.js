@@ -4,6 +4,7 @@ import { CountryContext } from "./contexts/countryContext";
 import Hero from "./components/hero/hero";
 import Header from "./components/header/header";
 import DownloadApp from "./components/downloadApp/downloadApp";
+import Footer from "./components/footer/footer";
 
 import "./assets/styles/core.css";
 
@@ -57,6 +58,7 @@ const App = () => {
         </CountryContext.Provider>
       </WeatherContext.Provider>
       <DownloadApp />
+      <Footer />
     </article>
   );
 };
