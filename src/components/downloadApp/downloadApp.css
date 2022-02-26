@@ -1,5 +1,57 @@
 section.download-app {
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  background: linear-gradient(182deg, #040b1e, #010613);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.app {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+div.app-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+  justify-content: center;
+}
+div.app-info h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+div.app-info p {
+  font-size: 1.1rem;
+  color: #c6c6c6;
+  line-height: 1.9;
+}
+div.app-shots {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.app-shots img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  top: 25px;
+}
+div.download {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  overflow: hidden;
+  margin-top: 3rem;
+  gap: 1rem;
 }
