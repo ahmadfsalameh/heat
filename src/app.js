@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     fetch(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=55e0b8f0cb3246a88c99d165e8b1be77`
+      `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_IP_API}`
     )
       .then((res) => res.json())
       .then((d) => {
@@ -36,7 +36,7 @@ const App = () => {
     setWeather({});
     const startingTime = new Date().getTime() / 1000;
     fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=41685b31f7104bf597f114815222002&q=${country.address}&days=10&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API}&q=${country.address}&days=10&aqi=no&alerts=no`
     )
       .then((res) => res.json())
       .then((d) => {

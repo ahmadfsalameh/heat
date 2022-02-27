@@ -73,7 +73,7 @@ const Header = ({ article, scrollToSection }) => {
   const searchAddress = (value) => {
     setLoading(true);
     fetch(
-      `http://api.weatherapi.com/v1/search.json?key=41685b31f7104bf597f114815222002&q=${value}`
+      `http://api.weatherapi.com/v1/search.json?key=${process.env.REACT_APP_WEATHER_API}&q=${value}`
     )
       .then((res) => res.json())
       .then((d) => {
