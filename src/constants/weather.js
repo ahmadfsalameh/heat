@@ -2,7 +2,6 @@ import {
   WiDaySunny,
   WiDayCloudy,
   WiNightAltCloudy,
-  WiCloudy,
   WiShowers,
   WiDayRainMix,
   WiNightAltRainMix,
@@ -16,6 +15,7 @@ import {
 } from "react-icons/wi";
 
 import { IoMoonOutline } from "react-icons/io5";
+import { BsClouds } from "react-icons/bs";
 
 export default [
   {
@@ -28,7 +28,7 @@ export default [
     code: 1003,
     day: "Partly cloudy",
     night: "Partly cloudy",
-    icon: [WiCloudy, WiCloudy],
+    icon: [BsClouds, BsClouds],
   },
   {
     code: 1006,
@@ -40,7 +40,7 @@ export default [
     code: 1009,
     day: "Overcast",
     night: "Overcast",
-    icon: [WiCloudy, WiCloudy],
+    icon: [BsClouds, BsClouds],
   },
   {
     code: 1030,
