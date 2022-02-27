@@ -61,3 +61,14 @@ div.footer-cell ul {
 div.footer-cell a {
   color: #2196f3;
 }
+@media screen and (max-width: 750px) {
+  footer {
+    scroll-snap-align: initial;
+  }
+  div.footer-container {
+    display: block;
+  }
+  div.footer-cell:nth-child(2) {
+    margin-top: 3rem;
+  }
+}
