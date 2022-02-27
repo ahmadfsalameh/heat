@@ -132,14 +132,24 @@ const Header = ({ article, scrollToSection }) => {
             <li>
               <a
                 href="#download"
-                onClick={scrollToSection}
+                onClick={(e) => {
+                  scrollToSection(e);
+                  setNav(false);
+                }}
                 data-location="download"
               >
                 Download App
               </a>
             </li>
             <li>
-              <a href="#about" onClick={scrollToSection} data-location="about">
+              <a
+                href="#about"
+                onClick={(e) => {
+                  scrollToSection(e);
+                  setNav(false);
+                }}
+                data-location="about"
+              >
                 About
               </a>
             </li>
