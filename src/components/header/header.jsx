@@ -8,11 +8,10 @@ import { CountryContext } from "../../contexts/countryContext";
 import _ from "lodash";
 import countryList from "country-list";
 import NoFlag from "./noFlag/noFlag";
-import scroll from "../../utils/scroll";
 
 import "./header.css";
 
-const Header = ({ article }) => {
+const Header = ({ article, scrollToSection }) => {
   const [country, address, setCountry] = useContext(CountryContext);
   const [addressValue, setAddressValue] = useState(address);
 
@@ -111,21 +110,6 @@ const Header = ({ article }) => {
       debounceSearch.current(value);
       showResults();
     }
-  };
-
-  const scrollToSection = (e) => {
-    let location = "home";
-    let val = 0;
-
-    if (e) {
-      e.preventDefault();
-      location = e.target.dataset.location;
-    }
-
-    if (location === "download") val = 1;
-    else if (location === "about") val = 2;
-
-    scroll(article.current, val);
   };
 
   const Flag = country.length ? Flags[country] : NoFlag;

@@ -5,6 +5,7 @@ import Hero from "./components/hero/hero";
 import Header from "./components/header/header";
 import DownloadApp from "./components/downloadApp/downloadApp";
 import Footer from "./components/footer/footer";
+import scroll from "./utils/scroll";
 
 import "./assets/styles/core.css";
 
@@ -49,6 +50,21 @@ const App = () => {
       });
   }, [country]);
 
+  const scrollToSection = (e) => {
+    let location = "home";
+    let val = 0;
+
+    if (e) {
+      e.preventDefault();
+      location = e.target.dataset.location;
+    }
+
+    if (location === "download") val = 1;
+    else if (location === "about") val = 2;
+
+    scroll(article.current, val);
+  };
+
   return (
     <article ref={article}>
       <WeatherContext.Provider value={weather}>
@@ -56,7 +72,7 @@ const App = () => {
         <CountryContext.Provider
           value={[country.country, country.address, setCountry]}
         >
-          <Header article={article} />
+          <Header article={article} scrollToSection={scrollToSection} />
         </CountryContext.Provider>
       </WeatherContext.Provider>
       <DownloadApp />
