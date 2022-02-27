@@ -18,7 +18,7 @@ const Footer = () => {
           </h4>
           <p>
             This application uses a combination of APIs to get the weather in
-            your area and anywhere in the world. Those APIs are (weatherapi.com)
+            your area and anywhere in the world. These APIs are (weatherapi.com)
             that's used to get the weather and search places and
             (ipgeolocation.io) that's used to get the location of users once the
             application loads to automatically get the weather.
