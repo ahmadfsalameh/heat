@@ -24,7 +24,11 @@ const Footer = () => {
             application loads, to automatically get the weather.
           </p>
           <p>
-            Made by <a>Ahmad Salameh</a>.
+            Made by{" "}
+            <a target="_blank" href="https://ahmadsalameh.devsdash.com">
+              Ahmad Salameh
+            </a>
+            .
           </p>
         </div>
         <div className="footer-cell">
@@ -36,13 +40,22 @@ const Footer = () => {
           </h4>
           <ul>
             <li>
-              <a>weatherapi.com</a>
+              <a target="_blank" href="https://weatherapi.com">
+                weatherapi.com
+              </a>
             </li>
             <li>
-              <a>ipgeolocation.io</a>
+              <a target="_blank" href="https://ipgeolocation.io">
+                ipgeolocation.io
+              </a>
             </li>
             <li>
-              <a>Source Code</a>
+              <a
+                target="_blank"
+                href="https://github.com/ahmadfsalameh/weather"
+              >
+                Source Code
+              </a>
             </li>
           </ul>
         </div>
