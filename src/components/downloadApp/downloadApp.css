@@ -58,3 +58,30 @@ div.download {
   margin-top: 3rem;
   gap: 1rem;
 }
+@media screen and (max-width: 950px) {
+  div.app-info h1 {
+    font-size: 2rem;
+  }
+  div.app-info p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  section.download-app {
+    height: auto;
+  }
+  div.app {
+    max-width: 600px;
+    margin: auto;
+    height: auto;
+    display: block;
+  }
+  div.app-shots {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  div.download {
+    height: 2.85rem;
+  }
+}
