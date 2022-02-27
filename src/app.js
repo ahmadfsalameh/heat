@@ -67,7 +67,7 @@ const App = () => {
   return (
     <article ref={article}>
       <WeatherContext.Provider value={weather}>
-        <Hero />
+        <Hero scrollToSection={scrollToSection} />
         <CountryContext.Provider
           value={[country.country, country.address, setCountry]}
         >

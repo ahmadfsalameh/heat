@@ -6,7 +6,7 @@ import heroImage from "../../assets/images/hero.jpg";
 import weatherJSON from "../../constants/weather";
 import "./hero.css";
 
-const Hero = () => {
+const Hero = ({ scrollToSection }) => {
   const weather = useContext(WeatherContext);
   const [unit, setUnit] = useState("celsius");
 
