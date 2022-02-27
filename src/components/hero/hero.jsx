@@ -61,7 +61,11 @@ const Hero = ({ scrollToSection }) => {
               </button>
             </div>
           </div>
-          <button className="scroll-down">
+          <button
+            className="scroll-down"
+            onClick={scrollToSection}
+            data-location="download"
+          >
             Scroll down <RiMouseLine />
           </button>
         </div>
