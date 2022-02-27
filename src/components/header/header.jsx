@@ -8,6 +8,7 @@ import { CountryContext } from "../../contexts/countryContext";
 import _ from "lodash";
 import countryList from "country-list";
 import NoFlag from "./noFlag/noFlag";
+import scroll from "../../utils/scroll";
 
 import "./header.css";
 
@@ -111,26 +112,48 @@ const Header = ({ article }) => {
     }
   };
 
+  const scrollToSection = (e) => {
+    if (e) e.preventDefault();
+
+    const location = e.target.dataset.location;
+    let val = 0;
+
+    if (location === "download") val = 1;
+    else if (location === "about") val = 2;
+
+    scroll(article.current, val);
+  };
+
   const Flag = country.length ? Flags[country] : NoFlag;
 
   return (
     <header ref={header}>
       <div className="header-container">
         <div className="logo">
-          <p>
-            <span>
-              <GiFireflake />
-            </span>
-            <span>HEAT</span>
-          </p>
+          <a href="#home" onClick={scrollToSection}>
+            <p>
+              <span>
+                <GiFireflake />
+              </span>
+              <span>HEAT</span>
+            </p>
+          </a>
         </div>
         <nav data-nav={nav}>
           <ul>
             <li>
-              <a href="#">Download App</a>
+              <a
+                href="#download"
+                onClick={scrollToSection}
+                data-location="download"
+              >
+                Download App
+              </a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#about" onClick={scrollToSection} data-location="about">
+                About
+              </a>
             </li>
             <li>
               <button onClick={() => setNav(false)}>
