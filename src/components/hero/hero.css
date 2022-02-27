@@ -169,3 +169,12 @@ div.weather-status button.scroll-down:hover {
   color: #fff;
   animation-play-state: paused;
 }
+@media screen and (max-width: 500px) {
+  div.weather-status div.weather-info span {
+    font-size: 1.7rem;
+  }
+  div.units {
+    right: 0rem;
+    top: -2rem;
+  }
+}
