@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { WeatherContext } from "../../contexts/weatherContext";
 import { RiMouseLine } from "react-icons/ri";
 
-import heroImage from "../../assets/images/hero.jpg";
+import heroImage from "../../assets/images/hero.webp";
 import weatherJSON from "../../constants/weather";
 import "./hero.css";
 
