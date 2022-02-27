@@ -15,7 +15,6 @@ const App = () => {
     country: "",
     address: "",
   });
-  const [agent, setAgent] = useState({});
 
   const article = useRef();
 
