@@ -21,7 +21,7 @@ const Footer = () => {
             your area and anywhere in the world. These APIs are (weatherapi.com)
             that's used to get the weather and search places and
             (ipgeolocation.io) that's used to get the location of users once the
-            application loads to automatically get the weather.
+            application loads, to automatically get the weather.
           </p>
           <p>
             Made by <a>Ahmad Salameh</a>.
