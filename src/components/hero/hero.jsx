@@ -33,7 +33,7 @@ const Hero = ({ scrollToSection }) => {
       <div
         className={isWeather ? "hero-loader hero-loader-hide" : "hero-loader"}
       ></div>
-      {isWeather && (
+      {!isWeather || (
         <div className="weather-status">
           {getIcon(current.condition.code, current.is_day)}
           <div className="weather-info">
