@@ -44,6 +44,7 @@ const Header = ({ article }) => {
 
   const focus = () => {
     location.current.focus();
+    scrollToSection();
   };
 
   const blur = () => {
@@ -113,10 +114,13 @@ const Header = ({ article }) => {
   };
 
   const scrollToSection = (e) => {
-    if (e) e.preventDefault();
-
-    const location = e.target.dataset.location;
+    let location = "home";
     let val = 0;
+
+    if (e) {
+      e.preventDefault();
+      location = e.target.dataset.location;
+    }
 
     if (location === "download") val = 1;
     else if (location === "about") val = 2;
