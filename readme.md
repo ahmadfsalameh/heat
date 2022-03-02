@@ -14,8 +14,8 @@
     ·
     <a target="_blank" href="https://github.com/ahmadfsalameh/weather/issues">Request Feature</a>
   </p>
-
-  <img src="images/screenshot.png" width="100" height="100" />
+    <br/>
+  <img src="images/screenshot.png" />
 </div>
 
 ## Built With
